@@ -1,13 +1,35 @@
 {
   "pages": [
+    "pages/work/work",
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/appeal/appeal",
+    "pages/apply/apply",
+    "pages/check/check"
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "志愿链",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "black",
+    "selectedColor": "#d81e06",
+    "list": [
+      {
+        "pagePath": "pages/work/work",
+        "text": "服务",
+        "iconPath": "icons/work.png",
+        "selectedIconPath": "icons/work1.png"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "text": "账号",
+        "iconPath": "icons/index.png",
+        "selectedIconPath": "icons/index1.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

@@ -1,0 +1,22 @@
+<!--pages/work.wxml-->
+<view class="workpage">
+  <view class="workblock">
+    <button class="workbtn1" catchtap="clickBtn1">
+      <image class="workicon" src="apply.png"></image>
+      <text class="worktext">申 请</text>
+    </button>
+  </view>
+  <view class="workblock">
+    <button class="workbtn2" catchtap="clickBtn2">
+      <image class="workicon" src="check.png"></image>
+      <text class="worktext">查 看</text>
+    </button>
+  </view>
+  <view class="workblock">
+    <button class="workbtn3" catchtap="clickBtn3">
+      <image class="workicon" src="appeal.png"></image>
+      <text class="worktext">申 诉</text>
+    </button>
+  </view>
+
+</view>
