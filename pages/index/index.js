@@ -52,5 +52,23 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  clickBtn1: function (e) {
+    wx.navigateTo({
+      url: '/pages/apply/apply'
+    })
+  },
+
+  clickBtn2: function (e) {
+    wx.navigateTo({
+      url: '/pages/check/check'
+    })
+  },
+
+  clickBtn3: function (e) {
+    wx.navigateTo({
+      url: '/pages/appeal/appeal'
+    })
   }
 })

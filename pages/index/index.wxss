@@ -16,6 +16,48 @@
   color: #aaa;
 }
 
-.usermotto {
-  margin-top: 200px;
+.workblock{
+  display: block;
+  flex: 0 0 0rpx;
+}
+
+.workbtn1{
+  background-color: lightcyan;
+  border-radius: 20rpx;
+  border: 0rpx;
+  flex: 0 0 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workbtn2{
+  background-color: lightgoldenrodyellow;
+  border-radius: 20rpx;
+  border: 0rpx;
+  flex: 0 0 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.workbtn3{
+  background-color: lightpink;
+  border-radius: 20rpx;
+  border: 0rpx;
+  flex: 0 0 250rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.worktext{
+  display: flex;
+  text-align: center;
+  font-size: 40rpx;
+}
+
+.workicon{
+  width: 40rpx;
+  height: 40rpx;
 }
