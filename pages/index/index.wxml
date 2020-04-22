@@ -7,7 +7,19 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+  <view class="workblock">
+    <button class="workbtn1" catchtap="clickBtn1">
+      <image class="workicon" src="apply.png"></image>
+      <text class="worktext">申 请</text>
+    </button>
+    <button class="workbtn2" catchtap="clickBtn2">
+      <image class="workicon" src="check.png"></image>
+      <text class="worktext">查 看</text>
+    </button>
+    <button class="workbtn3" catchtap="clickBtn3">
+      <image class="workicon" src="appeal.png"></image>
+      <text class="worktext">申 诉</text>
+    </button>
   </view>
 </view>
+

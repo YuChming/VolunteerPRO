@@ -21,13 +21,13 @@
         "pagePath": "pages/work/work",
         "text": "服务",
         "iconPath": "icons/work.png",
-        "selectedIconPath": "icons/work1.png"
+        "selectedIconPath": "icons/work-red.png"
       },
       {
         "pagePath": "pages/index/index",
         "text": "账号",
-        "iconPath": "icons/index.png",
-        "selectedIconPath": "icons/index1.png"
+        "iconPath": "icons/person.png",
+        "selectedIconPath": "icons/person-red.png"
       }
     ]
   },
