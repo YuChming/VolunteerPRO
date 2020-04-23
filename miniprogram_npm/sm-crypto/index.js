@@ -1,18 +1,18 @@
 module.exports = (function() {
 var __MODS__ = {};
-var __DEFINE__ = function(modId, func, req) { var m = { exports: {} }; __MODS__[modId] = { status: 0, func: func, req: req, m: m }; };
-var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = { exports: {} }; __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); if(typeof m.exports === "object") { __MODS__[modId].m.exports.__proto__ = m.exports.__proto__; Object.keys(m.exports).forEach(function(k) { __MODS__[modId].m.exports[k] = m.exports[k]; var desp = Object.getOwnPropertyDescriptor(m.exports, k); if(desp && desp.configurable) Object.defineProperty(m.exports, k, { set: function(val) { __MODS__[modId].m.exports[k] = val; }, get: function() { return __MODS__[modId].m.exports[k]; } }); }); if(m.exports.__esModule) Object.defineProperty(__MODS__[modId].m.exports, "__esModule", { value: true }); } else { __MODS__[modId].m.exports = m.exports; } } return __MODS__[modId].m.exports; };
+var __DEFINE__ = function(modId, func, req) { var m = { exports: {}, _tempexports: {} }; __MODS__[modId] = { status: 0, func: func, req: req, m: m }; };
+var __REQUIRE__ = function(modId, source) { if(!__MODS__[modId]) return require(source); if(!__MODS__[modId].status) { var m = __MODS__[modId].m; m._exports = m._tempexports; var desp = Object.getOwnPropertyDescriptor(m, "exports"); if (desp && desp.configurable) Object.defineProperty(m, "exports", { set: function (val) { if(typeof val === "object" && val !== m._exports) { m._exports.__proto__ = val.__proto__; Object.keys(val).forEach(function (k) { m._exports[k] = val[k]; }); } m._tempexports = val }, get: function () { return m._tempexports; } }); __MODS__[modId].status = 1; __MODS__[modId].func(__MODS__[modId].req, m, m.exports); } return __MODS__[modId].m.exports; };
 var __REQUIRE_WILDCARD__ = function(obj) { if(obj && obj.__esModule) { return obj; } else { var newObj = {}; if(obj != null) { for(var k in obj) { if (Object.prototype.hasOwnProperty.call(obj, k)) newObj[k] = obj[k]; } } newObj.default = obj; return newObj; } };
 var __REQUIRE_DEFAULT__ = function(obj) { return obj && obj.__esModule ? obj.default : obj; };
-__DEFINE__(1587608321662, function(require, module, exports) {
+__DEFINE__(1587611402462, function(require, module, exports) {
 module.exports = {
     sm2: require('./src/sm2/index'),
     sm3: require('./src/sm3/index'),
     sm4: require('./src/sm4/index'),
 };
 
-}, function(modId) {var map = {"./src/sm2/index":1587608321663,"./src/sm3/index":1587608321669,"./src/sm4/index":1587608321670}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321663, function(require, module, exports) {
+}, function(modId) {var map = {"./src/sm2/index":1587611402463,"./src/sm3/index":1587611402469,"./src/sm4/index":1587611402470}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1587611402463, function(require, module, exports) {
 const { BigInteger } = require('jsbn');
 const { encodeDer, decodeDer } = require('./asn1');
 const SM3Digest = require('./sm3');
@@ -222,8 +222,8 @@ module.exports = {
     getPoint,
 };
 
-}, function(modId) { var map = {"./asn1":1587608321664,"./sm3":1587608321665,"./sm2":1587608321668,"./utils":1587608321666}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321664, function(require, module, exports) {
+}, function(modId) { var map = {"./asn1":1587611402464,"./sm3":1587611402465,"./sm2":1587611402468,"./utils":1587611402466}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1587611402464, function(require, module, exports) {
 const { BigInteger } = require('jsbn');
 
 function bigIntToMinTwosComplementsHex(bigIntegerValue) {
@@ -469,7 +469,7 @@ module.exports = {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321665, function(require, module, exports) {
+__DEFINE__(1587611402465, function(require, module, exports) {
 const { BigInteger } = require('jsbn');
 const _ = require('./utils');
 
@@ -798,8 +798,8 @@ class SM3Digest {
 
 module.exports = SM3Digest;
 
-}, function(modId) { var map = {"./utils":1587608321666}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321666, function(require, module, exports) {
+}, function(modId) { var map = {"./utils":1587611402466}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1587611402466, function(require, module, exports) {
 const { BigInteger, SecureRandom } = require('jsbn');
 const { ECCurveFp } = require ('./ec');
 
@@ -967,8 +967,8 @@ module.exports = {
     hexToArray,
 };
 
-}, function(modId) { var map = {"./ec":1587608321667}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321667, function(require, module, exports) {
+}, function(modId) { var map = {"./ec":1587611402467}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1587611402467, function(require, module, exports) {
 const { BigInteger } = require('jsbn');
 
 /**
@@ -1288,7 +1288,7 @@ module.exports = {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321668, function(require, module, exports) {
+__DEFINE__(1587611402468, function(require, module, exports) {
 const { BigInteger } = require('jsbn');
 const SM3Digest = require('./sm3');
 const _ = require('./utils');
@@ -1382,8 +1382,8 @@ class SM2Cipher {
 
 module.exports = SM2Cipher;
 
-}, function(modId) { var map = {"./sm3":1587608321665,"./utils":1587608321666}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321669, function(require, module, exports) {
+}, function(modId) { var map = {"./sm3":1587611402465,"./utils":1587611402466}; return __REQUIRE__(map[modId], modId); })
+__DEFINE__(1587611402469, function(require, module, exports) {
 /**
  * 左补0到指定长度
  */
@@ -1620,7 +1620,7 @@ module.exports = function(str) {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-__DEFINE__(1587608321670, function(require, module, exports) {
+__DEFINE__(1587611402470, function(require, module, exports) {
 const DECRYPT = 0;
 const ROUND = 32;
 const BLOCK = 16;
@@ -1793,6 +1793,6 @@ module.exports = {
 };
 
 }, function(modId) { var map = {}; return __REQUIRE__(map[modId], modId); })
-return __REQUIRE__(1587608321662);
+return __REQUIRE__(1587611402462);
 })()
 //# sourceMappingURL=index.js.map

@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Nova-xiao/VolunteerPRO#readme",
   "dependencies": {
-    "miniprogram-taas-sdk": "../../MiniProgram"
+    "miniprogram-taas-sdk": "file:taasSDK"
   }
 }
