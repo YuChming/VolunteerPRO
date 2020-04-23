@@ -1,6 +1,6 @@
-const taas = require("miniprogram-taas-sdk");
-
 //index.js
+const taas = require("miniprogram-taas-sdk");
+const util = require("../../utils/util.js");
 //获取应用实例
 const app = getApp()
 
@@ -52,6 +52,16 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+    // 获取openId  
+    wx.cloud.callFunction({
+      name: "getOpenId",
+      complete: res => {
+        console.log(res)
+        this.globalData.openId = res.result.openid
+       
+      }
+    })
+    
   },
 
   clickBtn1: function (e) {
