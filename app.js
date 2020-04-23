@@ -34,8 +34,19 @@ App({
         }
       }
     })
+
+    //获取用户openId
+    let that = this
+    wx.cloud.callFunction({
+      name: "getOpenId",
+      complete: res => {
+        console.log(res)
+        that.globalData.openId = res.result.openid
+      }
+    })
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    openId: null
   }
 })

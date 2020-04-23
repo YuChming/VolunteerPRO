@@ -13,9 +13,7 @@ Page({
   },
   //事件处理函数
   bindViewTap: function() {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
+    console.log(this.data.userInfo)
   },
   onLoad: function () {
     console.log(taas.version)
