@@ -1,0 +1,64 @@
+<!--pages/apply/apply.wxml-->
+<view wx:if="{{step == 1}}">
+  <form bindsubmit="formSubmit" >
+    <view class="page-section">
+      <view class="weui-cells__title">志愿活动标题</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="Title" class="weui-input" placeholder="请输入活动标题" value="{{title}}"/>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">志愿活动内容</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <textarea name="Content" class="weui-textarea" maxlength="-1" placeholder="请输入活动内容" value="{{content}}"></textarea>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">预计参与人数</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <input name="PeopleNumber" class="weui-input" placeholder="请输入预计参与人数" value="{{peoplenumber?peoplenumber:''}}"/>
+        </view>
+      </view>
+    </view>
+    <view>
+      <button formType="submit">确定</button>
+    </view>
+  </form>
+</view>
+<view wx:elif="{{step == 2}}">
+  <view class="page-section">
+      <view class="weui-cells__title">志愿活动标题</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-input">{{title}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">志愿活动内容</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-textarea">{{content}}</view>
+        </view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="weui-cells__title">预计参与人数</view>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-input">{{peoplenumber}}</view>
+        </view>
+      </view>
+    </view>
+  <button bindtap="Modify">返回修改</button>
+  <button bindtap="sub2tass">确认无误，提交</button>
+</view>
+<view wx:else class="weui-msg">
+  <view class="weui-msg__text-area">提交完成</view>
+  <view class="weui-msg__text-area">提交id为：{{contentId}}</view>
+</view>

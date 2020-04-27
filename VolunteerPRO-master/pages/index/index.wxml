@@ -1,0 +1,25 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <block wx:else>
+      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="workblock">
+    <button class="workbtn1" catchtap="clickBtn1">
+      <image class="workicon" src="apply.png"></image>
+      <text class="worktext">申 请</text>
+    </button>
+    <button class="workbtn2" catchtap="clickBtn2">
+      <image class="workicon" src="check.png"></image>
+      <text class="worktext">查 看</text>
+    </button>
+    <button class="workbtn3" catchtap="clickBtn3">
+      <image class="workicon" src="appeal.png"></image>
+      <text class="worktext">申 诉</text>
+    </button>
+  </view>
+</view>
+
